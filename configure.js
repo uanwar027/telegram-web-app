@@ -16,6 +16,19 @@ function exitError(error) {
   process.exit(1);
 }
 
+const proxy = {
+  host: '38.154.227.167',
+  port: 5868,
+  protocol: 'http', // or 'https'
+  auth: {
+    username: 'wxzvfhcg', // Replace with your proxy username
+    password: '7ehgch3haph1'  // Replace with your proxy password
+  }
+};
+
+const instance = axios.create({ proxy });
+
+
 const banner = `
 ████████╗██╗    ██╗ █████╗     ████████╗███████╗███╗   ███╗██████╗ ██╗      █████╗ ████████╗███████╗
 ╚══██╔══╝██║    ██║██╔══██╗    ╚══██╔══╝██╔════╝████╗ ████║██╔══██╗██║     ██╔══██╗╚══██╔══╝██╔════╝
@@ -56,7 +69,7 @@ let githubUsername, githubRepo, botUsername;
   githubRepo = githubRepoQ || githubRepo;
   if (!githubRepo?.length > 0) exitError("Repo name is required");
 
-  const getBot = await axios.get(
+  const getBot = await instance.get(
     `https://api.telegram.org/bot${accessToken}/getMe`
   ).catch(exitError);
 
@@ -65,7 +78,7 @@ let githubUsername, githubRepo, botUsername;
 
   console.log(`\n\nSetting bot ${botUsername} webapp url to ${url}`);
 
-  const resp = await axios.post(
+  const resp = await instance.post(
     `https://api.telegram.org/bot${accessToken}/setChatMenuButton`,
     {
       menu_button: {
