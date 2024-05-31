@@ -36,11 +36,7 @@ display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-`;
-
-const AlignContainer = styled.div`
- display: flex;
- justify-content: center;
+  gap: 30px;
 `;
 
 function App() {
@@ -64,14 +60,9 @@ function App() {
 
       <img style={{width:200,height:150}}  src={Logo} alt="Logo" />
 
-        </LogoStyle>
-        <div style={{marginTop:'30px'}}>
-        <FlexBoxCol>
-       
           <FlexBoxRow>
-            <AlignContainer>
           <TonConnectButton/>
-            </AlignContainer>
+           
             <Button type="primary">
               {network
                 ? network === CHAIN.MAINNET
@@ -80,6 +71,10 @@ function App() {
                 : "Not Connected"}
             </Button>
           </FlexBoxRow>
+        </LogoStyle>
+        <div style={{marginTop:'30px'}}>
+        <FlexBoxCol>
+       
           <Counter address={userFriendlyAddress} balance={balance}/>
           <TransferTon />
           {/* <Jetton /> */}
