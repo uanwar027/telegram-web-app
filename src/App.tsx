@@ -38,11 +38,8 @@ display: flex;
   text-align: center;
 `;
 
-const AlignContaier = styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+const AlignContainer = styled.div`
+ 
 
 `;
 
@@ -72,7 +69,10 @@ function App() {
         <FlexBoxCol>
        
           <FlexBoxRow>
-          <TonConnectButton />
+            <AlignContainer>
+
+          <TonConnectButton/>
+            </AlignContainer>
             <Button type="primary">
               {network
                 ? network === CHAIN.MAINNET

@@ -18,7 +18,7 @@ export function TransferTon() {
   return (
     
     <Row gutter={16}>
-    <Col span={16}>
+    <Col span={24}>
     
 
 
