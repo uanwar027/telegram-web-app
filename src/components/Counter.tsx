@@ -21,8 +21,8 @@ export function Counter({address,balance}:any) {
       <TonConnectButton />
 
     
-      <Row>
-    <Col >
+      <Row gutter={16}>
+    <Col span={16}>
       <Card title="Wallet Details" bordered={false}>
         <p><strong>Address</strong>: {address}</p>
         <p><strong>Balance</strong>: {balance}</p>
