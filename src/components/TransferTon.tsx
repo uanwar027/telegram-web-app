@@ -43,7 +43,7 @@ export function TransferTon() {
           ></Input>
    </div>
    <div style={{marginTop:10}}>
-   <label>To Receiver</label>
+   <label>Receiver Address</label>
           <Input
             style={{ marginRight: 8 }}
             value={tonRecipient}

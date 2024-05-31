@@ -39,8 +39,8 @@ display: flex;
 `;
 
 const AlignContainer = styled.div`
- 
-
+ display: flex;
+ justify-content: center;
 `;
 
 function App() {
@@ -70,7 +70,6 @@ function App() {
        
           <FlexBoxRow>
             <AlignContainer>
-
           <TonConnectButton/>
             </AlignContainer>
             <Button type="primary">
