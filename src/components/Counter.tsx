@@ -1,45 +1,35 @@
 import { TonConnectButton } from "@tonconnect/ui-react";
-import { useCounterContract } from "../hooks/useCounterContract";
-import { useTonConnect } from "../hooks/useTonConnect";
+// import { useCounterContract } from "../hooks/useCounterContract";
+// import { useTonConnect } from "../hooks/useTonConnect";
 
-import {
-  Card,
-  FlexBoxCol,
-  FlexBoxRow,
-  Ellipsis,
-  Button,
-} from "./styled/styled";
-
-export function Counter() {
-  const { connected } = useTonConnect();
-  const { value, address, sendIncrement } = useCounterContract();
+// import {
+//   Card,
+//   FlexBoxCol,
+//   FlexBoxRow,
+//   Ellipsis,
+//   Button,
+// } from "./styled/styled";
+import React from 'react';
+import { Card, Col, Row } from 'antd';
+export function Counter({address,balance}:any) {
+  
+  // const { connected } = useTonConnect();
+  // const { value, address, sendIncrement } = useCounterContract();
 
   return (
     <div className="Container">
       <TonConnectButton />
 
-      <Card>
-        <FlexBoxCol>
-          <h3>Counter</h3>
-          <FlexBoxRow>
-            <b>Address</b>
-            <Ellipsis>{address}</Ellipsis>
-          </FlexBoxRow>
-          <FlexBoxRow>
-            <b>Value</b>
-            <div>{value ?? "Loading..."}</div>
-          </FlexBoxRow>
-          <Button
-            disabled={!connected}
-            className={`Button ${connected ? "Active" : "Disabled"}`}
-            onClick={() => {
-              sendIncrement();
-            }}
-          >
-            Increment
-          </Button>
-        </FlexBoxCol>
+    
+      <Row gutter={16}>
+    <Col span={16}>
+      <Card title="Wallet Details" bordered={false}>
+        <p><strong>Address</strong>: {address}</p>
+        <p><strong>Balance</strong>: {balance}</p>
       </Card>
+    </Col>
+   
+  </Row>
     </div>
   );
 }
