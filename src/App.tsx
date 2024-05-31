@@ -12,7 +12,7 @@ import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
 import { getWalletBalance } from './utils/tonBalance';
 import { useState,useEffect } from "react";
-import Logo from "./assets/irsolution.svg?React";
+import Logo from "./assets/irsolution.svg";
 const StyledApp = styled.div`
   background-color: #d3d3d3; /* Light gray color */
   color: black;
